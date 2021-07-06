@@ -1,8 +1,8 @@
 function Scoreboard() {
     return (
         <section>
-            <p>Current Score</p>
-            <p>High Score</p>
+            <p><span className="underline">Current Score</span>: 0</p>
+            <p><span className="underline">High Score</span>: 0</p>
         </section>
     );
 }

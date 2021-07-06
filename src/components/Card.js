@@ -1,17 +1,9 @@
-import images from "../images";
-
-function Card() {
+function Card(props) {
     return (
-        <div>
-            {images.map((image, index) => {
-                return (
-                    <figure key={index}>
-                        <img src={image.src} alt={image.name} />
-                        <figcaption>{image.name}</figcaption>
-                    </figure>
-                );
-            })}
-        </div>
+        <figure onClick={props.clickHandler}>
+            <img src={props.image.src} alt={props.image.name} />
+            <figcaption>{props.image.name}</figcaption>
+        </figure>
     );
 }
 
