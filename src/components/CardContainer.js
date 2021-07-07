@@ -1,9 +1,11 @@
-import {useState} from "react";
+import { useState, useRef } from "react";
 import Card from "./Card";
 import images from "../images";
 
-function CardContainer() {
+function CardContainer(props) {
     const [orderedImages, setOrderedImages] = useState(shuffle(images));
+
+    var clickedImages = useRef([]);
 
     function shuffle(list) {
         var shuffled = list.slice();
@@ -22,7 +24,17 @@ function CardContainer() {
     }
 
     function handleClick(e) {
-        setOrderedImages(shuffle(orderedImages));
+        var currImage = e.currentTarget.id;
+
+        if (clickedImages.current.includes(currImage)) {
+            clickedImages.current = [currImage];
+            props.updateScores(false);
+        } else {
+            clickedImages.current.push(currImage);
+            props.updateScores(true);
+        }
+
+        setOrderedImages(shuffle(orderedImages)); //why is this needed if app re-renders?
     }
 
     return (
