@@ -27,6 +27,7 @@ function CardContainer(props) {
         var currImage = e.currentTarget.id;
 
         if (clickedImages.current.includes(currImage)) {
+            alert("Oops, you lose!");
             clickedImages.current = [currImage];
             props.updateScores(false);
         } else {
