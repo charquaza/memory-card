@@ -14,6 +14,7 @@ function App() {
   });
 
   function updateScores(incrementScore) {
+    //increment score if passed true, else reset score
     if (incrementScore) {
       setScores((prevScores) => {
         var newCurrScore = (prevScores.currScore === 25) ? 
