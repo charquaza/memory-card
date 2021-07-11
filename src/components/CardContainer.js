@@ -35,7 +35,7 @@ function CardContainer(props) {
             props.updateScores(true);
         }
 
-        setOrderedImages(shuffle(orderedImages)); //why is this needed if app re-renders?
+        setOrderedImages(shuffle(orderedImages));
     }
 
     return (
